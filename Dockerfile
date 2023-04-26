@@ -1,10 +1,12 @@
 FROM bitnami/pytorch-intel:latest
 ENV DEBIAN_FRONTEND=noninteractive
 
-# update apt-get 
-RUN sudo apt-get update; sudo apt-get autoremove
+USER root
 
-RUN sudo apt-get install -y \
+# update apt-get 
+RUN apt-get update; apt-get autoremove
+
+RUN apt-get install -y \
     cdo \
     nco \
     gdal-bin \
@@ -30,7 +32,7 @@ ADD dockerRoot /
 WORKDIR /kubeflow
 
 # install all python dependancies 
-RUN pip3 install --user --no-cache-dir -r requirements.txt
+RUN pip3 install --user --no-cache-dir -r ../requirements.txt
 
 # create env variables
 ARG http_proxy

@@ -1,6 +1,4 @@
 scikit-image
-jupyterlab
-ipykernel
 numpy
 pandas
 scipy
@@ -13,10 +11,15 @@ tqdm
 osmnx
 torchsummary
 geopandas==0.6.3
+torch 
+torchvision 
+setuptools==57.5.0
 tensorboardX
 tensorboard
 networkx==2.8
 numba
+cmake
 utm
 intel_extension_for_pytorch
-gdal==3.0.4
+tiledb
+intel-openmp
