@@ -2,14 +2,15 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: "eks-cluster-loanDefault"
-  version: "1.23"
+  name: "kubeflow-icom-cv"
+  version: "1.22"
   region: "us-east-1"
 
+vpc:
+ id: 
+
 managedNodeGroups:
-- name: "eks-cluster-loanDefault-mng"
-  desiredCapacity: 2
-  minSize: 2
-  maxSize: 6
+- name: "kubeflow-icom-cv-mng"
+  desiredCapacity: 5
   volumeSize: 100
-  instanceType: "m6i.xlarge"
+  instanceType: "m6i.4xlarge"
